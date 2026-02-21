@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Analysis</title>
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        * { box-sizing: border-box; margin:0; padding:0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f4f6f8; color:#333; scroll-behavior: smooth; }
+
+        header {
+            display:flex; justify-content:space-between; align-items:center;
+            padding:15px 30px; background:#007bff; color:white; position:sticky; top:0; z-index:100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        header h1 { font-size:24px; }
+        .nav-links { display:flex; gap:10px; flex-wrap:wrap; }
+        .nav-links button {
+            padding:8px 16px; background:white; color:#007bff; border:none; border-radius:5px; cursor:pointer; font-weight:bold;
+            transition:0.3s;
+        }
+        .nav-links button:hover { background:#e6f0ff; transform:scale(1.05);}
+        .nav-links .active { background:#0056b3; color:white; }
+
+        section { padding:80px 20px; text-align:center; min-height:100vh; }
+
+        /* Home Section */
+        #homeScreen {
+            background: url("/static/images/7.jpeg") center/cover no-repeat;
+            color:white; display:flex; justify-content:center; align-items:center;
+        }
+        #homeScreen .overlay {
+            background:rgba(0,0,0,0.6); padding:50px; border-radius:15px; text-align:center; margin:auto;
+            max-width:600px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        #homeScreen h2 { font-size:40px; margin-bottom:20px; font-weight:700; }
+        #homeScreen p { font-size:18px; margin-bottom:25px; }
+        #homeScreen button { 
+            padding:12px 30px; font-size:18px; background:#ff6b00; color:white; border:none; border-radius:8px; 
+            cursor:pointer; font-weight:bold; transition:0.3s; 
+        }
+        #homeScreen button:hover { background:#e65a00; transform:scale(1.05); }
+
+        /* About Section */
+        #aboutScreen { background:#fff; padding-top:100px; padding-bottom:100px; }
+        #aboutScreen h2 { color:#007bff; font-size:36px; margin-bottom:40px; font-weight:700; }
+        .about-content { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:40px; max-width:1200px; margin:0 auto; }
+        .about-text { flex:1 1 500px; font-size:18px; text-align:left; }
+        .about-text p { margin-bottom:20px; }
+
+        /* Cards */
+        .card-container { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top:60px; }
+        .card { background:#f8f9fa; width:260px; padding:20px; border-radius:15px; box-shadow:0 4px 20px rgba(0,0,0,0.1); transition:0.4s; text-align:center; }
+        .card:hover { transform:translateY(-8px) scale(1.03); box-shadow:0 12px 25px rgba(0,0,0,0.25); }
+        .card i { margin-bottom:12px; }
+        .card h3 { color:#007bff; margin-bottom:10px; font-size:20px; }
+        .card p { font-size:15px; color:#555; }
+
+        /* Get Started Section */
+        #getStartedScreen { background:linear-gradient(135deg,#007bff,#00c6ff); color:white; }
+        #getStartedScreen h2 { font-size:36px; margin-bottom:25px; font-weight:700; }
+        #getStartedScreen button { padding:14px 32px; font-size:18px; background:white; color:#007bff; border:none; border-radius:10px; cursor:pointer; font-weight:bold; transition:0.3s; }
+        #getStartedScreen button:hover { background:#e6e6e6; transform:scale(1.05); }
+
+        /* Tableau */
+        #vizContainer { max-width:1200px; margin:50px auto; }
+        #vizContainer iframe { width:100%; border:none; display:block; overflow:hidden; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Heart Disease Analysis</h1>
+    <div class="nav-links">
+        <button onclick="showSection('homeScreen', this)">Home</button>
+        <button onclick="showSection('aboutScreen', this)">About</button>
+        <button onclick="showDashboard(this)">Dashboard</button>
+        <button onclick="showStory(this)">Story</button>
+        <button onclick="getStarted(this)">Get Started</button>
+    </div>
+</header>
+
+<!-- Home Section -->
+<section id="homeScreen">
+    <div class="overlay">
+        <h2>Welcome to Heart Disease Analysis ❤️</h2>
+        <p>Explore interactive dashboards and stories to understand heart disease risk factors like age, BMI, diabetes, smoking, and alcohol consumption.</p>
+        <button onclick="getStarted()">Get Started</button>
+    </div>
+</section>
+
+<!-- About Section -->
+<!-- About Section -->
+<section id="aboutScreen">
+    <h2>About This Project</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p>This project leverages health datasets to study heart disease risk factors including age, BMI, diabetes, smoking, alcohol use, and more. Through interactive dashboards and stories, users can explore patterns, correlations, and trends in population health data.</p>
+            <p>The visualizations provide insights into risk factors, helping healthcare professionals, researchers, and students understand key determinants of heart disease and make informed decisions.</p>
+        </div>
+        <div class="about-image">
+            <img src="/static/images/14.jpeg" alt="Heart Health Illustration" style="width:100%; max-width:500px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.2);">
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <i class="fas fa-chart-line" style="font-size:60px; color:#007bff;"></i>
+            <h3>Data Analysis</h3>
+            <p>Analyze health datasets to understand heart disease risk factors.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-tachometer-alt" style="font-size:60px; color:#007bff;"></i>
+            <h3>Interactive Dashboards</h3>
+            <p>Embedded Tableau dashboards for interactive data exploration.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-lightbulb" style="font-size:60px; color:#007bff;"></i>
+            <h3>Insights</h3>
+            <p>Gain meaningful insights to understand trends and patterns in heart disease data.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Get Started Section -->
+<section id="getStartedScreen">
+    <h2>Ready to Explore?</h2>
+    <button onclick="getStarted()">Go to Dashboard</button>
+</section>
+
+<!-- Tableau Dashboard/Story -->
+<section id="vizContainer">
+    <iframe id="vizFrame" src="" style="width: 105%; border:none; overflow:hidden;"></iframe>
+</section>
+
+<script>
+const navButtons = document.querySelectorAll('.nav-links button');
+function setActive(button){ navButtons.forEach(btn=>btn.classList.remove('active')); if(button) button.classList.add('active'); }
+
+function showSection(id, button=null){
+    const sections = ['homeScreen','aboutScreen','getStartedScreen','vizContainer'];
+    sections.forEach(s=>document.getElementById(s).style.display='none');
+    document.getElementById(id).style.display='block';
+    setActive(button);
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function showDashboard(button=null){
+    const iframe = document.getElementById('vizFrame');
+    iframe.src = "https://public.tableau.com/views/HeartDiseaseAnalysisDashboard_17716034579210/Dashboard2?:showVizHome=no";
+    iframe.height = window.innerHeight * 0.9;
+    showSection('vizContainer', button);
+}
+
+function showStory(button=null){
+    const iframe = document.getElementById('vizFrame');
+    iframe.src = "https://public.tableau.com/views/HeartDiseaseAnalysisStory/Story1?:showVizHome=no";
+    iframe.height = window.innerHeight * 1.2;
+    showSection('vizContainer', button);
+}
+
+function getStarted(button=null){ showDashboard(button); }
+
+window.onload = function(){ showSection('homeScreen'); };
+window.onresize = function(){
+    const iframe = document.querySelector('#vizContainer iframe');
+    if(iframe){
+        iframe.height = iframe.src.includes('Dashboard2') ? window.innerHeight*0.9 : window.innerHeight*1.2;
+    }
+};
+</script>
+
+</body>
+</html>
