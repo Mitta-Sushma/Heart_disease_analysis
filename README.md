@@ -102,6 +102,7 @@ Copy code
 http://127.0.0.1:5000/
 
 🗄️ Database Usage
+
 - The application uses an SQL database to:
 - Store user login details
 - Manage user data securely
@@ -111,12 +112,14 @@ Supported databases:
 - MySQL (optional)
 
 📊 Key Insights
+
 Age and diabetes significantly increase heart disease risk
 Smoking and alcohol consumption contribute to higher risk
 Poor general health and physical inactivity are major factors
 Multiple health conditions increase disease probability
 
 🚀 Future Enhancements
+
 Machine learning-based prediction
 Advanced database security
 User dashboards with history tracking
@@ -124,6 +127,7 @@ Deployment to cloud platforms
 Enhanced UI with modern frameworks
 
 🏁 Conclusion
+
 The Heart Disease Analysis Dashboard & Web Application demonstrates how data visualization, web development, and database integration can be combined to analyze heart disease risk factors. The project provides meaningful insights and a strong foundation for future healthcare analytics solutions.
 
 Publication Links:
