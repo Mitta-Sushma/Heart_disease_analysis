@@ -126,6 +126,23 @@ User dashboards with history tracking
 Deployment to cloud platforms
 Enhanced UI with modern frameworks
 
+Project Screenshots:
+
+- Home Page:
+  <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/6de1a4aa-3e3d-498d-8220-76c9df4a7912" />
+
+- About Page:
+  <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b77a3085-821d-4346-8bc3-2e0e9b329a17" />
+
+- Get Started Page:
+  <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/4e958502-df45-4ea2-b894-2b95f9c0c4eb" />
+
+- Dashboard Page:
+  <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/3f45899b-aaf0-43c0-a37c-4756859976b6" />
+
+- Story Page:
+  <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/052d8442-61b2-4ffe-b00f-c141e75a8e97" />
+
 🏁 Conclusion
 
 The Heart Disease Analysis Dashboard & Web Application demonstrates how data visualization, web development, and database integration can be combined to analyze heart disease risk factors. The project provides meaningful insights and a strong foundation for future healthcare analytics solutions.
