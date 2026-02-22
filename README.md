@@ -2,14 +2,17 @@
 ❤️ Heart Disease Analysis Dashboard & Web Application:
 
 📌 Abstract
+
 Heart disease is one of the leading causes of death worldwide. Understanding its risk factors is essential for early detection and prevention.
 The Heart Disease Analysis Dashboard & Web Application is developed using Tableau, Flask, and SQL to analyze and visualize cardiovascular risk factors. The system presents insights through interactive dashboards and stores user data using a database for better management.
 
 📖 Introduction
+
 The growing prevalence of cardiovascular diseases highlights the need for accessible tools that analyze health data and present insights clearly.
 This project enables users to explore heart disease risk factors through interactive visualizations and a web interface. It demonstrates how demographic, lifestyle, and medical attributes influence heart disease.
 
 🎯 Objectives
+
 Analyze heart disease risk factors using data visualization
 Store and manage user data using SQL database
 Identify high-risk groups through dashboards
@@ -25,6 +28,7 @@ Healthcare analytics demonstrations
 
 
 🏗️ System Architecture
+
 The system follows a client–server architecture:
 Frontend
 HTML, CSS
@@ -37,6 +41,7 @@ Visualization Layer
 Tableau dashboards and story slides
 
 💻 Technologies Used
+
 Tableau – Dashboard & Story creation
 Python (Flask) – Web application framework
 SQL (SQLite/MySQL) – Database management
@@ -44,6 +49,7 @@ HTML5 & CSS3 – Web design
 GitHub – Version control & hosting
 
 📊 Visualizations Included
+
 The dashboard includes the following analyses:
 Gender vs Heart Disease
 Age vs Heart Disease
@@ -57,6 +63,7 @@ Age vs BMI vs Diabetes
 Heart Disease vs Diabetics
 
 📁 Project Structure
+
 Id="l3o8vb"
 Copy code
 
@@ -71,13 +78,21 @@ HeartDiseaseAnalysis/
 └── README.md
 
 ⚙️ Installation and Execution
+
 Step 1: Install Python
+
 Install Python (version 3.7 or above).
+
 Step 2: Install Required Packages
+
 Bash id="4v2d0p"
+
 Copy code
+
 pip install flask
+
 Step 3: Run the Application
+
 Bash id="j5b6gk"
 Copy code
 python app.py
@@ -87,13 +102,13 @@ Copy code
 http://127.0.0.1:5000/
 
 🗄️ Database Usage
-The application uses an SQL database to:
-Store user login details
-Manage user data securely
-Enable future enhancements like personalized reports
+- The application uses an SQL database to:
+- Store user login details
+- Manage user data securely
+- Enable future enhancements like personalized reports
 Supported databases:
-SQLite (default)
-MySQL (optional)
+- SQLite (default)
+- MySQL (optional)
 
 📊 Key Insights
 Age and diabetes significantly increase heart disease risk
@@ -120,5 +135,7 @@ Publication Links:
 - Web Application:
 
 👩‍💻 Author
+
 Mitta Sushma
+
 Final Year Project – Heart Disease Analysis
